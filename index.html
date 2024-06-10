@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #ededed;
+            font-family: "PT Sans", sans-serif;
+
+            >.cont {
+                display: flex;
+                width: 900px;
+                height: 550px;
+                position: relative;
+                background-color: white;
+                >* {
+                    height: 100%;
+                }
+
+                .form-cont {
+                    width: 640px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transition: 1.2s ease-in-out;
+                    >.form {
+                        width: 640px;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
+                        flex-wrap: wrap;
+                        background-color: white;
+                        position: absolute;
+                        top: 0;
+                        transition: 1.2s cubic-bezier(1.2,1,0.5,0.12);
+                        overflow: hidden;
+                        >h2 {
+                            width: 100%;
+                            text-transform: capitalize;
+                            text-align: center;
+                            margin-bottom: 30px;
+                        }
+                        >label {
+                            width: 100%;
+                            text-transform: uppercase;
+                            display: flex;
+                            justify-content: center;
+                            flex-wrap: wrap;
+
+                            >span {
+                                text-align: center;
+                                width: 100%;
+                                color: #cfcfcf;
+                            }
+
+                            >input {
+                                border: none;
+                                outline: none;
+                                background-color: none;
+                                display: flex;
+                                border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+                                text-align: center;
+                                margin: 10px 0 20px;
+                                font-size: 20px;
+                                padding-bottom: 5px;
+                            }
+                        }
+                        >a {
+                            text-decoration: none;
+                            color: #cfcfcf;
+                            text-transform: capitalize;
+                            width: 100%;
+                            text-align: center;
+                            margin-bottom: 40px;
+                        }
+                        >button {
+                            width: 55%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            align-items: center;
+                            height: 40px;
+                            border: none;
+                            border-radius: 40px;
+                            text-transform: uppercase;
+                            margin-bottom: 20px;
+                            cursor: pointer;
+                            &:nth-of-type(1) {
+                                background-color: #d4af7a;
+                                color: white;
+                                font-size: 18px;
+                            }
+                            &:nth-of-type(2) {
+                                background-color: white;
+                                color: #d3dae9;
+                                font-size: 18px;
+                                border: 2px solid #d3dae9;
+                                >a {
+                                    color: #455a81;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+
+                    }
+                    >form-in,
+                    form-up {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                        }
+                    >.form-in {
+                        left: 0;
+                        z-index: 1;
+                        }
+                    >.form-up {
+                        left: 0;
+                        opacity: 0;
+                    }
+                }
+                >.sub-cont {
+                    width: 260px;
+                    text-align: center;
+                    transition: 1.2s ease-in-out;
+                    position: absolute;
+                    top: 0;
+                    left: 640px;
+                    overflow: hidden;
+
+                    >.img {
+                        height: 100%;
+                        display: flex;
+                        align-content: center;
+                        flex-wrap: wrap;
+                        background-position: right;
+
+                        >.up,
+                        .in {
+                            height: 100%;
+                            text-transform: capitalize;
+                            color: rgba(255, 255, 255, 0.8);
+                            position: absolute;
+                            top: 0;
+                            transition: 1.2s ease-in-out;
+                            background-size: cover;
+                            z-index: 5;
+
+                            >h2 {
+                                margin: 75px 0 30px;
+                            }
+
+                            >p {
+                                margin-bottom: 240px;
+                                padding: 0 10px;
+                            }
+                        }
+
+                        >.up {
+                            opacity: 1;
+                            background-image: url(assets/img/UFVB3168.JPG);
+                            background-position: left;
+                        }
+
+                        >.in {
+                            background-image: url(assets/img/IMG_0487.JPG);
+                            background-position: right;
+                            opacity: 0;
+                        }
+
+                        >.sign-btn {
+                            width: 100px;
+                            height: 40px;
+                            border: 2px solid rgb(255, 255, 255);
+                            border-radius: 40px;
+                            position: absolute;
+                            bottom: 100px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            cursor: pointer;
+                            overflow: hidden;
+                            z-index: 10;
+
+                            >span {
+                                background-color: rgba(255, 255, 255, 0);
+                                color: white;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 100%;
+                                height: 100%;
+                                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                                transition: 1s;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .change1 {
+            transform: translate3d(-640px, 0, 0);
+        }
+
+        .change2 {
+            transform: translate3d(260px, 0, 0);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="cont">
+            <div class="form-cont">
+                <div class="form form-in">
+                    <h2>welcome back</h2>
+                    <label for="mail">
+                        <span>email</span>
+                        <input type="email" id="mail" autocomplete="off">
+                    </label>
+                    <label for="pass">
+                        <span>password</span>
+                        <input type="password" id="pass">
+                    </label>
+                    <a href="">forget password?</a>
+                    <button>sign in</button>
+                    <button>connect with . <a href="">facebook</a></button>
+                </div>
+                <div class="form form-up">
+                    <h2>Time to feel like home,</h2>
+                    <label for="name">
+                        <span>name</span>
+                        <input type="text" id="name" autocomplete="off">
+                    </label>
+                    <label for="mail">
+                        <span>email</span>
+                        <input type="email" id="mail" autocomplete="off">
+                    </label>
+                    <label for="pass">
+                        <span>password</span>
+                        <input type="password" id="pass">
+                    </label>
+                    <button>sign up</button>
+                    <button>connect with .<a href="">facebook</a></button>
+                </div>
+            </div>
+            <div class="sub-cont">
+                <div class="img">
+                    <div class="up">
+                        <h2>new here?</h2>
+                        <p>sign up and discover great amount of new opportunities!</p>
+                    </div>
+                    <div class="in">
+                        <h2>one of us?</h2>
+                        <p>If you already has an account, just sign in. We've missed you!</p>
+                    </div>
+                    <div class="sign-btn">
+                        <span>sign up</span>
+                        <span>sign in</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    let flag = 1
+    const btn = document.querySelector('.sign-btn')
+    const divs = document.querySelectorAll('main>div>div')
+    const _img = document.querySelector('.img')
+    const cont = document.querySelector('.cont').clientWidth
+
+
+
+    const wForm = divs[0].clientWidth
+    const wSign = divs[1].clientWidth
+
+    const _up = document.querySelector('.up')
+    const _in = document.querySelector('.in')
+
+    _img.style.width = divs[1].clientWidth + 'px'
+
+    _in.style.left = '-' + wForm + 'px'
+    _in.style.width = divs[1].clientWidth + 'px'
+
+    _up.style.left = '0px'
+    _up.style.width = divs[1].clientWidth + 'px'
+
+    const fUp = document.querySelector('.form-up')
+    const fIn = document.querySelector('.form-in')
+
+
+    btn.addEventListener('click', () => {
+        if (flag % 2) {
+            btn.children[0].style.marginTop = '-38px'
+            divs[0].style.transform = 'translate(' + divs[1].clientWidth + 'px)'
+            divs[1].style.transform = 'translate(-' + divs[0].clientWidth + 'px)'
+            fIn.style.width= '0px'
+            fUp.style.width= divs[0].clientWidth + 'px'
+            fIn.style.marginLeft = '-'+cont+'px'
+            fUp.style.marginLeft = '0px'
+            fIn.style.opacity = '0'
+            fUp.style.opacity = '1'
+
+            _up.style.left = wForm + 'px'
+            _up.style.opacity = '0'
+
+            _in.style.left = '0'
+            _in.style.opacity = '1'
+        } else {
+            btn.children[0].style.marginTop = '0px'
+            divs[0].style.transform = 'translate(0px)'
+            divs[1].style.transform = 'translate(0px)'
+            fIn.style.width= divs[0].clientWidth + 'px'
+            fUp.style.width= '0px'
+            fIn.style.marginLeft = '0px'
+            fUp.style.marginLeft = '-'+cont+'px'
+            fIn.style.opacity = '1'
+            fUp.style.opacity = '0'
+
+            _in.style.left = '-' + wForm + 'px'
+            _in.style.opacity = '0'
+
+            _up.style.left = '0'
+            _up.style.opacity = '1'
+        }
+        flag++
+    })
+</script>
+
+</html>
